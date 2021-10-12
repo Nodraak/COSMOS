@@ -1,0 +1,20 @@
+TELEMETRY SAMPLE SAMPLE_HK BIG_ENDIAN "Sample_app uart read telemetry"
+  #                NAME       BITS  TYPE    ID      DESCRIPTION
+  APPEND_ID_ITEM   STREAM_ID   16   UINT    0x0830  "Stream ID"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      SEQUENCE    16   UINT            "Packet Sequence"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      PKT_LEN     16   UINT            "Length of the packet"
+  # telemetry secondary header
+  APPEND_ITEM      SECONDS     32   UINT            ""
+        UNITS Seconds sec
+  APPEND_ITEM      SUBSECS     16   UINT            ""
+        UNITS Milliseconds ms
+  # some bytes not known for what
+  APPEND_ITEM      SPARE2ALIGN 32   UINT            "Spares"
+  # payload
+  APPEND_ITEM      CMD_ERRS     8   UINT            "Command Error Counter"
+  APPEND_ITEM      CMD_CNT      8   UINT            "Command Counter"
+  # spare / alignment
+  APPEND_ITEM      SPARE       16   UINT            "Spares"
+  # TODO: len + raw

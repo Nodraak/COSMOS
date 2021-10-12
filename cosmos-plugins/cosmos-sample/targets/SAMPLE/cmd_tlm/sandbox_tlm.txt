@@ -1,0 +1,23 @@
+TELEMETRY SAMPLE SANDBOX_APP_PING_TLM_MID BIG_ENDIAN "SANDBOX_APP_PING_TLM_MID"
+  #                NAME       BITS  TYPE    ID      DESCRIPTION
+  APPEND_ID_ITEM   STREAM_ID   16   UINT    0x0888  "Stream ID"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      SEQUENCE    16   UINT            "Packet Sequence"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      PKT_LEN     16   UINT            "Length of the packet"
+  # some bytes not known for what
+  APPEND_ITEM      SPARE2ALIGN 32   UINT            "Spares"
+
+
+TELEMETRY SAMPLE SANDBOX_APP_HK_PC_TLM_MID BIG_ENDIAN "SANDBOX_APP_HK_PC_TLM_MID"
+  #                NAME       BITS  TYPE    ID      DESCRIPTION
+  APPEND_ID_ITEM   STREAM_ID   16   UINT    0x0899  "Stream ID"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      SEQUENCE    16   UINT            "Packet Sequence"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      PKT_LEN     16   UINT            "Length of the packet"
+  # some bytes not known for what
+  APPEND_ITEM      SPARE2ALIGN 32   UINT            "Spares"
+  # payload
+  APPEND_ITEM      CMD_ERRS     8   UINT            "Command Error Counter"
+  APPEND_ITEM      CMD_CNT      8   UINT            "Command Counter"

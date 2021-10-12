@@ -1,0 +1,19 @@
+# Set VARIABLEs here to allow variation in your plugin
+# See https://cosmosc2.com/docs/v5/plugins for more information
+#VARIABLE sample_target_name SAMPLE
+
+# Modify this according to your actual target connection
+# See https://cosmosc2.com/docs/v5/interfaces for more information
+#TARGET SAMPLE <%= sample_target_name %>
+#INTERFACE <%= sample_target_name %>_INT tcpip_client_interface.rb 127.0.0.1 8080 8081 10.0 nil BURST
+#  MAP_TARGET <%= sample_target_name %>
+
+VARIABLE ip localhost
+VARIABLE port_tm 1235
+VARIABLE port_tc 1234
+VARIABLE sample_target_name SAMPLE
+
+TARGET SAMPLE <%= sample_target_name %>
+# hostname   write_dest_port   read_port   write_src_port   interface_address   ttl   write_timeout   read_timeout   bind_address
+INTERFACE <%= sample_target_name %>_INT udp_interface.rb <%= ip %> <%= port_tc %> <%= port_tm %> nil nil 128 nil nil
+  MAP_TARGET <%= sample_target_name %>

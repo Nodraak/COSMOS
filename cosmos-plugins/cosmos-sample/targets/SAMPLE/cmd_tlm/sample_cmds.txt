@@ -1,0 +1,12 @@
+COMMAND SAMPLE SAMPLE_WRITE BIG_ENDIAN "Sample_app Write Command"
+  #                      NAME        BITS TYPE   min VAL     max VAL     init VAL    DESCRIPTION
+  # cFS primary header
+  APPEND_ID_PARAMETER    STREAM_ID   16   UINT   0x1831      0x1831      0x1831      "SAMPLE Packet Identification"
+      FORMAT_STRING "0x%04X"
+  APPEND_PARAMETER       SEQUENCE    16   UINT   MIN_UINT16  MAX_UINT16  0xC000      ""
+      FORMAT_STRING "0x%04X"
+  APPEND_PARAMETER       PKT_LEN     32   UINT   0x0009      0x0050      0x0009      "Packet length"
+  # TODO: raw
+  # cFS CMD secondary header
+  APPEND_PARAMETER       CMD_ID       8   UINT   0           0           0           ""
+  APPEND_PARAMETER       CHECKSUM     8   UINT   MIN_UINT8   MAX_UINT8   MIN_UINT8   ""

@@ -1,0 +1,11 @@
+COMMAND TO_LAB TO_LAB_ENABLE BIG_ENDIAN "TO_Lab enable telemetry"
+  #                   NAME      BITS TYPE   min VAL     max VAL    init VAL  DESCRIPTION
+  APPEND_ID_PARAMETER STREAM_ID  16  UINT   0x1880      0x1880     0x1880    "Stream ID"
+      FORMAT_STRING "0x%04X"
+  APPEND_PARAMETER    SEQUENCE   16  UINT   0xC000      MAX_UINT16 0xC000    ""
+      FORMAT_STRING "0x%04X"
+  APPEND_PARAMETER    PKT_LEN    16  UINT   0x0001      0xFFFF     0x0012    "length of the packet"
+  APPEND_PARAMETER    CMD_ID      8  UINT   6           6          6         ""
+  APPEND_PARAMETER    CHECKSUM    8  UINT   MIN_UINT8   MAX_UINT8  0x98      ""
+      FORMAT_STRING "0x%2X"
+  APPEND_PARAMETER    DEST_IP   144  STRING "127.0.0.1"                      "Destination IP, i.e. 172.16.9.112, pc-57"

@@ -114,3 +114,54 @@ TELEMETRY SAMPLE AKS_UART_DRIVER_UART_2_READ_MID BIG_ENDIAN "AKS_UART_DRIVER_UAR
         UNITS Milliseconds ms
   # payload
   APPEND_ITEM      RAW              800   STRING          "Raw"
+
+
+# AKS_UART_DRIVER_UART_0_WRITE_MID aks_uart_driver_WriteCmd_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_0_WRITE_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_0_WRITE_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x18D0  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_FUNC       16    UINT            "CCSDS Function"
+  APPEND_ITEM      CCSDS_CRC        16    UINT            "CCSDS Checksum"
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"
+
+
+# AKS_UART_DRIVER_UART_1_WRITE_MID aks_uart_driver_WriteCmd_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_1_WRITE_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_1_WRITE_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x18D1  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_FUNC       16    UINT            "CCSDS Function"
+  APPEND_ITEM      CCSDS_CRC        16    UINT            "CCSDS Checksum"
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"
+
+
+# AKS_UART_DRIVER_UART_2_WRITE_MID aks_uart_driver_WriteCmd_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_2_WRITE_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_2_WRITE_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x18D2  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_FUNC       16    UINT            "CCSDS Function"
+  APPEND_ITEM      CCSDS_CRC        16    UINT            "CCSDS Checksum"
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"

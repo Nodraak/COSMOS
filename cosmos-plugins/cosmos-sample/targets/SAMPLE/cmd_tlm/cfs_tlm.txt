@@ -1,8 +1,8 @@
 # CFE_ES_HK_TLM_MID CFE_ES_HousekeepingTlm_t
-TELEMETRY CFS CFE_ES_HKPACKET LITTLE_ENDIAN "Executive Services Housekeeping Packet"
-  APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0800 "CCSDS Packet Identification" BIG_ENDIAN
-  APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control" BIG_ENDIAN
-  APPEND_ITEM CCSDS_LENGTH 16 UINT "CCSDS Packet Data Length" BIG_ENDIAN
+TELEMETRY CFS CFE_ES_HKPACKET BIG_ENDIAN "Executive Services Housekeeping Packet"
+  APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0800 "CCSDS Packet Identification"
+  APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"
+  APPEND_ITEM CCSDS_LENGTH 16 UINT "CCSDS Packet Data Length"
   APPEND_ITEM CCSDS_SECONDS 32 UINT "CCSDS Telemetry Secondary Header (seconds)"
   APPEND_ITEM CCSDS_SUBSECS 16 UINT "CCSDS Telemetry Secondary Header (subseconds)"
   APPEND_ITEM CMDCOUNTER 8 UINT "The ES Application Command Counter."
@@ -16,6 +16,7 @@ TELEMETRY CFS CFE_ES_HKPACKET LITTLE_ENDIAN "Executive Services Housekeeping Pac
   APPEND_ITEM OSALMINORVERSION 8 UINT "OS Abstraction Layer Minor Version Number."
   APPEND_ITEM OSALREVISION 8 UINT "OS Abstraction Layer Revision Number."
   APPEND_ITEM OSALMISSIONREVISION 8 UINT "OS Abstraction Layer MissionRevision Number."
+  APPEND_ITEM TODO_PSP 32 UINT "TODO PSP"
   APPEND_ITEM SYSLOGBYTESUSED 32 UINT "Total number of bytes used in system log."
   APPEND_ITEM SYSLOGSIZE 32 UINT "Total size of the system log."
   APPEND_ITEM SYSLOGENTRIES 32 UINT "Number of entries in the system log."
@@ -44,6 +45,7 @@ TELEMETRY CFS CFE_ES_HKPACKET LITTLE_ENDIAN "Executive Services Housekeeping Pac
   APPEND_ITEM HEAPBLOCKSFREE 32 UINT "Number of free blocks remaining in the OS heap."
   APPEND_ITEM HEAPMAXBLOCKSIZE 32 UINT "Number of bytes in the largest free block."
 
+# CFE_ES_APP_TLM_MID CFE_ES_OneAppTlm_Payload_t
 TELEMETRY CFS CFE_ES_ONEAPPTLM BIG_ENDIAN "Single Application Information Packet"
   APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x080B "CCSDS Packet Identification"
   APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"
@@ -56,7 +58,6 @@ TELEMETRY CFS CFE_ES_ONEAPPTLM BIG_ENDIAN "Single Application Information Packet
   APPEND_ITEM APPINFO_ENTRYPOINT 160 STRING "The Entry Point label for the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_FILENAME 512 STRING "The Filename of the file containing the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_STACKSIZE 32 UINT "The Stack Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)"
-  APPEND_ITEM APPINFO_MODULEID 32 UINT "The ID of the Loadable Module for the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_ADDRESSESAREVALID 32 UINT "Indicates that the Code, Data, and BSS addresses/sizes are valid. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_CODEADDRESS 32 UINT "The Address of the Application Code Segment. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_CODESIZE 32 UINT "The Code Size of the Application. (Parent: For more information, see CFE_ES_AppInfo_t.)"
@@ -72,6 +73,7 @@ TELEMETRY CFS CFE_ES_ONEAPPTLM BIG_ENDIAN "Single Application Information Packet
   APPEND_ITEM APPINFO_MAINTASKNAME 160 STRING "The Application's Main Task ID. (Parent: For more information, see CFE_ES_AppInfo_t.)"
   APPEND_ITEM APPINFO_NUMOFCHILDTASKS 32 UINT "Number of Child tasks for an App. (Parent: For more information, see CFE_ES_AppInfo_t.)"
 
+# CFE_ES_MEMSTATS_TLM_MID CFE_ES_PoolStatsTlm_Payload_t
 TELEMETRY CFS CFE_ES_POOLSTATSTLM BIG_ENDIAN "Memory Pool Statistics Packet"
   APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0810 "CCSDS Packet Identification"
   APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"
@@ -94,10 +96,10 @@ TELEMETRY CFS CFE_ES_SHELLPACKET BIG_ENDIAN "OS Shell Output Packet"
   APPEND_ARRAY_ITEM SHELLOUTPUT 8 UINT 512 "ASCII text string containing output from OS Shell that was received in response to an OS Shell Command."
 
 # CFE_EVS_LONG_EVENT_MSG_MID
-TELEMETRY CFS CFE_EVS_PACKET LITTLE_ENDIAN "Event Message Telemetry Packet"
-  APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0808 "CCSDS Packet Identification" BIG_ENDIAN
-  APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control" BIG_ENDIAN
-  APPEND_ITEM CCSDS_LENGTH 16 UINT "CCSDS Packet Data Length" BIG_ENDIAN
+TELEMETRY CFS CFE_EVS_PACKET BIG_ENDIAN "Event Message Telemetry Packet"
+  APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0808 "CCSDS Packet Identification"
+  APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"
+  APPEND_ITEM CCSDS_LENGTH 16 UINT "CCSDS Packet Data Length"
   APPEND_ITEM CCSDS_SECONDS 32 UINT "CCSDS Telemetry Secondary Header (seconds)"
   APPEND_ITEM CCSDS_SUBSECS 16 UINT "CCSDS Telemetry Secondary Header (subseconds)"
   APPEND_ITEM PACKETID_APPNAME 160 STRING "Application name. (Parent: Event packet information.)"
@@ -200,7 +202,7 @@ TELEMETRY CFS CFE_SB_SUBRPRTMSG BIG_ENDIAN "SB Subscription Report Packet"
   APPEND_ITEM QOS_RELIABILITY 8 UINT "Specify high(1) or low(0) message transfer reliability for off-board routing, currently unused. (Parent: Quality of Service, used only for interprocessor communication.)"
   APPEND_ITEM PIPE 8 UINT "Destination pipe id to send above msg id."
 
-# CFE_TBL_HK_TLM_MID
+# CFE_TBL_HK_TLM_MID CFE_TBL_HousekeepingTlm_Payload_t
 TELEMETRY CFS CFE_TBL_HKPACKET BIG_ENDIAN "Table Services Housekeeping Packet"
   APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0804 "CCSDS Packet Identification"
   APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"
@@ -215,7 +217,7 @@ TELEMETRY CFS CFE_TBL_HKPACKET BIG_ENDIAN "Table Services Housekeeping Packet"
   APPEND_ITEM LASTVALCRC 32 UINT "Data Integrity Value computed for last table validated."
   APPEND_ITEM LASTVALSTATUS 32 INT "Returned status from validation function for last table validated."
   APPEND_ITEM ACTIVEBUFFER 8 UINT "Indicator of whether table buffer validated was 0=Inactive, 1=Active."
-  APPEND_ITEM LASTVALTABLENAME 304 STRING "Name of last table validated."
+  APPEND_ITEM LASTVALTABLENAME 400 STRING "Name of last table validated."
   APPEND_ITEM SUCCESSVALCTR 8 UINT "Total number of successful table validations."
   APPEND_ITEM FAILEDVALCTR 8 UINT "Total number of unsuccessful table validations."
   APPEND_ITEM NUMVALREQUESTS 8 UINT "Number of times Table Services has requested validations from Apps."
@@ -224,10 +226,10 @@ TELEMETRY CFS CFE_TBL_HKPACKET BIG_ENDIAN "Table Services Housekeeping Packet"
   APPEND_ITEM MEMPOOLHANDLE 32 UINT "Handle to TBL's memory pool."
   APPEND_ITEM LASTUPDATETIME_SECONDS 32 UINT "Number of seconds since epoch. (Parent: Time of last table update.)"
   APPEND_ITEM LASTUPDATETIME_SUBSECONDS 32 UINT "Number of subseconds since epoch (LSB = 2^(-32) seconds). (Parent: Time of last table update.)"
-  APPEND_ITEM LASTUPDATEDTBL 304 STRING "Name of the last table updated."
+  APPEND_ITEM LASTUPDATEDTBL 400 STRING "Name of the last table updated."
   APPEND_ITEM LASTFILELOADED 512 STRING "Path and Name of last table image file loaded."
   APPEND_ITEM LASTFILEDUMPED 512 STRING "Path and Name of last file dumped to."
-  APPEND_ITEM LASTTABLELOADED 304 STRING "Name of the last table loaded."
+  APPEND_ITEM LASTTABLELOADED 400 STRING "Name of the last table loaded."
 
 TELEMETRY CFS CFE_TBL_TBLREGPACKET BIG_ENDIAN "Table Registry Info Packet"
   APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x080C "CCSDS Packet Identification"
@@ -317,7 +319,7 @@ TELEMETRY CFS CFE_TIME_DIAGPACKET BIG_ENDIAN "Time Services Diagnostics Packet"
   APPEND_ITEM TONEUNDERLIMIT 32 UINT "Min between tone signal interrupts."
   APPEND_ITEM DATASTORESTATUS 32 UINT "Data Store status (preserved across processor reset)."
 
-# CFE_TIME_HK_TLM_MID
+# CFE_TIME_HK_TLM_MID CFE_TIME_HousekeepingTlm_Payload_t
 TELEMETRY CFS CFE_TIME_HKPACKET BIG_ENDIAN "Time Services Housekeeping Packet"
   APPEND_ID_ITEM CCSDS_STREAMID 16 UINT 0x0805 "CCSDS Packet Identification"
   APPEND_ITEM CCSDS_SEQUENCE 16 UINT "CCSDS Packet Sequence Control"

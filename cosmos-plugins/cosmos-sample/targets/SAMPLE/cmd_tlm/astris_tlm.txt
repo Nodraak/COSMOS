@@ -1,0 +1,116 @@
+# AKS_GNC_DATA_MID aks_gnc_DataTlm_t
+TELEMETRY SAMPLE AKS_GNC_DATA_MID BIG_ENDIAN "AKS_GNC_DATA_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x08A0  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_SECONDS    32    UINT            "CCSDS Telemetry Secondary Header (seconds)"
+        UNITS Seconds sec
+  APPEND_ITEM      CCSDS_SUBSECS    16    UINT            "CCSDS Telemetry Secondary Header (subseconds)"
+        UNITS Milliseconds ms
+  # payload
+  APPEND_ITEM      POS              64    FLOAT           "Pos"     LITTLE_ENDIAN
+  APPEND_ITEM      VEL              64    FLOAT           "Vel"     LITTLE_ENDIAN
+  APPEND_ITEM      ACC              64    FLOAT           "Acc"     LITTLE_ENDIAN
+  APPEND_ITEM      P                64    FLOAT           "P"       LITTLE_ENDIAN
+  APPEND_ITEM      I                64    FLOAT           "I"       LITTLE_ENDIAN
+  APPEND_ITEM      D                64    FLOAT           "D"       LITTLE_ENDIAN
+  APPEND_ITEM      THRUST           64    FLOAT           "Thrust"  LITTLE_ENDIAN
+
+
+# AKS_IMU_DRIVER_DATA_MID aks_imu_driver_DataTlm_t
+TELEMETRY SAMPLE AKS_IMU_DRIVER_DATA_MID BIG_ENDIAN "AKS_IMU_DRIVER_DATA_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x08B0  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_SECONDS    32    UINT            "CCSDS Telemetry Secondary Header (seconds)"
+        UNITS Seconds sec
+  APPEND_ITEM      CCSDS_SUBSECS    16    UINT            "CCSDS Telemetry Secondary Header (subseconds)"
+        UNITS Milliseconds ms
+  # payload
+  APPEND_ITEM      ACC              64    FLOAT           "Acc"     LITTLE_ENDIAN
+
+
+# AKS_RCS_DRIVER_DATA_MID aks_rcs_driver_DataCmd_t
+TELEMETRY SAMPLE AKS_RCS_DRIVER_DATA_MID BIG_ENDIAN "AKS_RCS_DRIVER_DATA_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x18C0  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_FUNC       16    UINT            "CCSDS Function"
+  APPEND_ITEM      CCSDS_CRC        16    UINT            "CCSDS Checksum"
+  # payload
+  APPEND_ITEM      THRUST           64    FLOAT           "Thrust"    LITTLE_ENDIAN
+
+
+# AKS_UART_DRIVER_UART_0_READ_MID aks_uart_driver_ReadTlm_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_0_READ_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_0_READ_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x08D0  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_SECONDS    32    UINT            "CCSDS Telemetry Secondary Header (seconds)"
+        UNITS Seconds sec
+  APPEND_ITEM      CCSDS_SUBSECS    16    UINT            "CCSDS Telemetry Secondary Header (subseconds)"
+        UNITS Milliseconds ms
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"
+
+
+# AKS_UART_DRIVER_UART_1_READ_MID aks_uart_driver_ReadTlm_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_1_READ_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_1_READ_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x08D1  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_SECONDS    32    UINT            "CCSDS Telemetry Secondary Header (seconds)"
+        UNITS Seconds sec
+  APPEND_ITEM      CCSDS_SUBSECS    16    UINT            "CCSDS Telemetry Secondary Header (subseconds)"
+        UNITS Milliseconds ms
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"
+
+
+# AKS_UART_DRIVER_UART_2_READ_MID aks_uart_driver_ReadTlm_t
+TELEMETRY SAMPLE AKS_UART_DRIVER_UART_2_READ_MID BIG_ENDIAN "AKS_UART_DRIVER_UART_2_READ_MID"
+  #                NAME             BITS  TYPE    ID      DESCRIPTION
+  # telemetry header
+  APPEND_ID_ITEM   CCSDS_STREAMID   16    UINT    0x08D2  "CCSDS Packet Identification"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_SEQUENCE   16    UINT            "CCSDS Packet Sequence Control"
+    FORMAT_STRING "0x%04X"
+  APPEND_ITEM      CCSDS_LENGTH     16    UINT            "CCSDS Packet Data Length"
+  APPEND_ITEM      CCSDS_SUBSYS     16    UINT            "CCSDS SubSys"
+  APPEND_ITEM      CCSDS_SYS        16    UINT            "CCSDS Sys"
+  APPEND_ITEM      CCSDS_SECONDS    32    UINT            "CCSDS Telemetry Secondary Header (seconds)"
+        UNITS Seconds sec
+  APPEND_ITEM      CCSDS_SUBSECS    16    UINT            "CCSDS Telemetry Secondary Header (subseconds)"
+        UNITS Milliseconds ms
+  # payload
+  APPEND_ITEM      RAW              800   STRING          "Raw"

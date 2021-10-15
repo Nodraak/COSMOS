@@ -66,6 +66,8 @@ services:
       - "cosmos-minio"
     env_file:
       - ".env"
+    ports:
+        - "1235:1235/udp"
 
   cosmos-traefik:
     image: "ballaerospace/cosmosc2-traefik:${COSMOS_TAG}"
